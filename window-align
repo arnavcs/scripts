@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# requires wmutils-core, and awk
+
+win=$(pfw)
+
+dim=$(wattr xywh $win |
+      awk 'function cieling40(x) { y = x / 40; return 40 * (y % 1 ? int(y) + 1 : y) }
+           function floor40(x)   { y = x / 40; return 40 * int(y) }
+           { xtl = floor40($1);        ytl = floor40($2); 
+             xbr = cieling40($3 + $1); ybr = cieling40($4 + $2);
+             print xtl, ytl, xbr - xtl - 2, ybr - ytl - 2 }')
+
+wtp $dim $win
+

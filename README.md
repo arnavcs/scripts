@@ -9,6 +9,7 @@ All dependencies are annotated at the start of every script.
 
 ## Usage
 
-* `align-window` resizes and moves the currently focused X11 window so that it aligns perfectly within a 40px by 40px grid
-* `dmenu-power` provides a simple powermenu via dmenu
-
+* `window-align` resizes and moves the currently focused X11 window so that it aligns perfectly within a 40px by 40px grid
+* `window-redraw` allows the user to draw a rectangle to describe the desired window geometry
+* `power-menu` provides a simple power menu via dmenu with suspend, reboot, and poweroff options
+* `display-layout` allows the user to run one of the scripts stored in `~/.screenlayout/` to configure the X11 display setup

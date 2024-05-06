@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# requires dmenu, and systemd
+
 option=$(echo -e "suspend\nreboot\npoweroff" | dmenu -l 3)
 [ -z $option ] || systemctl $option
 
