@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# requires dmenu, mktemp, and scrot
+
+[ $# -eq 1 ] || exit 1
+
+case $1 in
+  anon)
+    mkdir -p /tmp/screenshots/
+    scrot -s -F '/tmp/screenshots/%Y-%m-%d_$wx$h.png' -e 'xclip -i -sel c -t image/png $f'
+    ;;
+  name)
+    fname=$(dmenu < /dev/null)
+    [ -z $fname ] || mkdir -p $HOME/pictures/screenshots/ \
+                  && scrot -s -F "$HOME/pictures/screenshots/$fname.png"
+    ;;
+  *)
+    exit 1
+    ;;
+esac
+

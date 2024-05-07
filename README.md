@@ -13,3 +13,5 @@ All dependencies are annotated at the start of every script.
 * `window-redraw` allows the user to draw a rectangle to describe the desired window geometry
 * `power-menu` provides a simple power menu via dmenu with suspend, reboot, and poweroff options
 * `display-layout` allows the user to run one of the scripts stored in `~/.screenlayout/` to configure the X11 display setup
+* `screenshot` with argument `anon` or `name` takes a screenshot to either copy to clipboard or save to a screenshots folder (filename decided by dmenu)
+
